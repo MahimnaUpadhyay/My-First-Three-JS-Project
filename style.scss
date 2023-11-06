@@ -15,10 +15,10 @@ body
 
 .container
 {
-    display: flex;
+    display: grid;
     width: 100vw;
     height: 100vh;
-    overflow-y: auto;
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .text_container
@@ -34,7 +34,11 @@ body
     font-size: 10em;
 }
 
-.text i
+.icon
 {
-    transform: translateX(-50%);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
 }
