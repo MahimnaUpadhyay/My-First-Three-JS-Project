@@ -10,6 +10,7 @@ body
     background-color: #1e1e1e;
     color: white;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;   
 }
 
 .container
@@ -28,7 +29,12 @@ body
     align-items: center;
 }
 
-.text
+.text p
 {
-    font-size: 3em;
+    font-size: 10em;
+}
+
+.text i
+{
+    transform: translateX(-50%);
 }
