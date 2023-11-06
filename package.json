@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "dependencies": {
+    "node": "^20.5.0",
+    "three": "^0.155.0"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  },
+  "scripts": {
+    "dev": "vite"
+  }
+}
