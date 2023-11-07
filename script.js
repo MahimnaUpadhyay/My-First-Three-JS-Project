@@ -14,7 +14,7 @@ const spaceBackgroundSphere = new THREE.Mesh
   
 scene.add(spaceBackgroundSphere);
 
-camera.position.z= 60;
+camera.position.z= 100;
 
 const renderer = new THREE.WebGLRenderer(
 	{
