@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   background-color: #1e1e1e;
@@ -14,16 +18,10 @@ body {
   display: flex;
   width: 100vw;
   height: 100vh;
-  overflow-y: auto;
-}
-
-.text_container {
-  display: flex;
-  width: 100%;
   justify-content: center;
   align-items: center;
 }
 
-.text {
-  font-size: 3em;
+.text p {
+  font-size: 7em;
 }/*# sourceMappingURL=style.css.map */

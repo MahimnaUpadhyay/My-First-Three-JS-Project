@@ -4,7 +4,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const textureLoader = new THREE.TextureLoader();
-const spaceBackgroundTexture = textureLoader.load('./spacebg.jpg');
+const spaceBackgroundTexture = textureLoader.load('./images/space_mesh/spacebg2.jpg');
 
 const spaceBackgroundSphere = new THREE.Mesh
 (
@@ -21,20 +21,38 @@ const renderer = new THREE.WebGLRenderer(
 		alpha: true
 	}
 );
-
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
-	
-const texture = new THREE.TextureLoader().load('./earth.jpg');
 
-const sphere = new THREE.Mesh(
+// Earth
+const earth_texture = new THREE.TextureLoader().load('./images/planet_mesh/earth.jpg');
 
-	new THREE.SphereGeometry( 15,32,16),
-	new THREE.MeshBasicMaterial( {map:texture} )
+const earth = new THREE.Mesh(
+
+	new THREE.SphereGeometry( 20,32,16),
+	new THREE.MeshBasicMaterial( {map:earth_texture} )
 
 );
   
-scene.add( sphere );
+scene.add( earth );
+
+earth.translateOnAxis(new THREE.Vector3(-30,0,0),1);
+
+camera.position.z = 60;
+
+// Mars
+const mars_texture = new THREE.TextureLoader().load('./images/planet_mesh/mars.png');
+
+const mars = new THREE.Mesh(
+	
+	new THREE.SphereGeometry(15,32,16),
+	new THREE.MeshBasicMaterial({map:mars_texture})
+
+);
+
+scene.add(mars);
+
+mars.translateOnAxis(new THREE.Vector3(30,0,0),1);
 
 camera.position.z = 60;
 
@@ -42,7 +60,9 @@ function animate() {
 	
 	requestAnimationFrame( animate );
 
-	sphere.rotation.y += 0.002;
+	earth.rotation.y += 0.002;
+
+	mars.rotation.y += 0.001;
 
 	renderer.render( scene, camera );
 }
