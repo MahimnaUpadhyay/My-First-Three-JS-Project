@@ -57,7 +57,7 @@ mars.translateOnAxis(new THREE.Vector3(-8,0,0),1);
 
 camera.position.z = 40;
 
-// Mars
+// Juipter
 const jupiter_texture = new THREE.TextureLoader().load('./images/planet_mesh/jupiter.jpg');
 
 const jupiter = new THREE.Mesh(
